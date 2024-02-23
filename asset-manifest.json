@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/helldivers_2_stratagems/static/css/main.d3682590.css",
+    "main.js": "/helldivers_2_stratagems/static/js/main.9608067b.js",
+    "static/js/453.550b4069.chunk.js": "/helldivers_2_stratagems/static/js/453.550b4069.chunk.js",
+    "static/media/login_limit.webp": "/helldivers_2_stratagems/static/media/login_limit.b5e8854a7b60f407bc77.webp",
+    "index.html": "/helldivers_2_stratagems/index.html",
+    "main.d3682590.css.map": "/helldivers_2_stratagems/static/css/main.d3682590.css.map",
+    "main.9608067b.js.map": "/helldivers_2_stratagems/static/js/main.9608067b.js.map",
+    "453.550b4069.chunk.js.map": "/helldivers_2_stratagems/static/js/453.550b4069.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3682590.css",
+    "static/js/main.9608067b.js"
+  ]
+}

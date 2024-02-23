@@ -1,0 +1,29 @@
+.enabled {
+    --name-color: black;
+    --consumed-color: grey;
+    --unconsumed-color: black;
+}
+
+.disabled {
+    --name-color: grey;
+    --consumed-color: grey;
+    --unconsumed-color: grey;
+}
+
+.activated {
+    --name-color: blue;
+    --consumed-color: blue;
+    --unconsumed-color: blue;
+}
+
+.name {
+    color: var(--name-color);
+}
+
+.consumed {
+    color: var(--consumed-color);
+}
+
+.unconsumed {
+    color: var(--unconsumed-color);
+}

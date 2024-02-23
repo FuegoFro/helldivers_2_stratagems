@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import './App.css'
+import styles from './App.module.css'
 import { PrefixNode } from './prefixTrie'
 import { Stratagem } from './stratagems'
 import StratagemPane from './StratagemPane'
+import loginLimitImg from './login_limit.webp'
 
 export enum Direction {
   UP,
@@ -18,6 +19,8 @@ interface AppProps {
 }
 
 function App({ stratagems, trieRoot }: AppProps) {
+  const [freedomBanner, setFreedomBanner] = useState(false)
+
   const [[currentDepth, currentNode], setCurrentNode] = useState<
     [number, StratagemNode]
   >([0, trieRoot])
@@ -38,6 +41,9 @@ function App({ stratagems, trieRoot }: AppProps) {
         case 'a':
           nextDirection = Direction.LEFT
           break
+        case 'f':
+          setFreedomBanner(!freedomBanner)
+          break
       }
       if (nextDirection != null && currentNode != null) {
         let nextNode = currentNode.children.get(nextDirection)
@@ -52,16 +58,24 @@ function App({ stratagems, trieRoot }: AppProps) {
     window.addEventListener('keydown', onKeyDown)
 
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [trieRoot, currentDepth, currentNode])
+  }, [trieRoot, currentDepth, currentNode, freedomBanner])
 
   const enabled = new Set(currentNode.values)
-  const activated =
-    currentNode.values.length === 1 && currentNode.children.size === 0
-      ? currentNode.values[0]
-      : null
+
+  if (freedomBanner) {
+    return (
+      <div className={styles.freedomBannerContainer}>
+        <img
+          className={styles.freedomBanner}
+          src={loginLimitImg}
+          alt={'ERROR: Servers at capacity. Please try again later.'}
+        />
+      </div>
+    )
+  }
 
   return (
-    <div className="App">
+    <div className={styles.strategemContainer}>
       {stratagems.map((stratagem, idx) => {
         return (
           <StratagemPane
@@ -69,7 +83,6 @@ function App({ stratagems, trieRoot }: AppProps) {
             stratagem={stratagem}
             depth={currentDepth}
             enabled={enabled.has(idx)}
-            activated={idx === activated}
           />
         )
       })}

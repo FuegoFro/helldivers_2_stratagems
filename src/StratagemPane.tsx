@@ -5,20 +5,19 @@ export interface StratagemPaneProps {
   stratagem: Stratagem
   depth: number
   enabled: boolean
-  activated: boolean
 }
 
 export default function StratagemPane({
   stratagem,
   depth,
   enabled,
-  activated,
 }: StratagemPaneProps) {
-  const containerStyle = activated
-    ? styles.activated
-    : enabled
-      ? styles.enabled
-      : styles.disabled
+  const activated = depth === stratagem.code.length
+  const containerStyle = !enabled
+    ? styles.disabled
+    : activated
+      ? styles.activated
+      : styles.enabled
   return (
     <div className={containerStyle}>
       <p className={styles.consumed}>

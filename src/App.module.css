@@ -1,0 +1,19 @@
+.freedomBannerContainer {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+
+.freedomBanner {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.strategemContainer {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+}

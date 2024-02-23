@@ -2,6 +2,7 @@ import App, { Direction, StratagemNode } from './App'
 import { useEffect, useMemo, useState } from 'react'
 import { STRATAGEMS } from './stratagems'
 import { buildPrefixTrie } from './prefixTrie'
+import styles from './AppWrapper.module.css'
 
 function directionsFromCode(code: string): Direction[] {
   return Array.from(code).map((char) => {
@@ -15,7 +16,7 @@ function directionsFromCode(code: string): Direction[] {
       case '◄':
         return Direction.LEFT
       default:
-        throw new Error(`Unexpected code char ${char}`)
+        throw new Error(`Unexpected code char '${char}'`)
     }
   })
 }
@@ -37,5 +38,16 @@ export function AppWrapper() {
     setTrieRoot(buildPrefixTrie(codeIdxPairs))
   }, [stratagemsList])
 
-  return trieRoot && <App stratagems={stratagemsList} trieRoot={trieRoot} />
+  return (
+    trieRoot && (
+      <div>
+        <App stratagems={stratagemsList} trieRoot={trieRoot} />
+        <div className={styles.freedomButtonContainer}>
+          <p>
+            <b>F</b> FREEDOM
+          </p>
+        </div>
+      </div>
+    )
+  )
 }

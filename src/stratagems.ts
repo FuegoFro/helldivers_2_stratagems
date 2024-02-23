@@ -59,14 +59,14 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: 'Autocannon',
-        code: '▼►◄▼▼▲▲►',
+        code: '▼◄▼▲▲►',
         callInTime: 'Three seconds',
         uses: 'Unlimited',
         cooldownTime: '480 seconds',
       },
       {
         name: 'Railgun',
-        code: '▼►◄▼▼▲◄▼►',
+        code: '▼►▼▲◄►',
         callInTime: 'Three seconds',
         uses: 'Unlimited',
         cooldownTime: '480 seconds',
@@ -106,7 +106,7 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: 'Orbital 380MM HE Barrage',
-        code: '►▼▼▲▲◄▼▼▼',
+        code: '►▼▲▲◄▼▼',
         callInTime: 'Six seconds',
         uses: 'Unlimited',
         cooldownTime: '240 seconds',
@@ -120,14 +120,14 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: 'Orbital Laser Strike',
-        code: '►▲◄▲►◄',
+        code: '►▼▲►▼',
         callInTime: 'Two seconds',
         uses: 'Three',
         cooldownTime: '300 seconds',
       },
       {
         name: 'Orbital Railcannon Strike',
-        code: '►▼▲▼◄',
+        code: '►▲▼▼►',
         callInTime: 'One second',
         uses: 'Unlimited',
         cooldownTime: '210 seconds',
@@ -153,7 +153,7 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: 'Eagle Cluster Bomb',
-        code: '▲►▼▼►▼',
+        code: '▲►▼▼►',
         callInTime: 'Immediate',
         uses: 'Four',
         cooldownTime: '15 seconds',
@@ -181,14 +181,14 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: 'Eagle 110MM Rocket Pods',
-        code: '▲▼▲◄',
+        code: '▲►▲◄',
         callInTime: 'Immediate',
         uses: 'Two',
         cooldownTime: '15 seconds',
       },
       {
         name: 'Eagle 500KG Bomb',
-        code: '▲◄▼▼▼',
+        code: '▲►▼▼▼',
         callInTime: 'Immediate',
         uses: 'One',
         cooldownTime: 'N/A',
@@ -228,14 +228,14 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: 'HMG Emplacement',
-        code: '▲▼◄►►◄',
+        code: '▼▲◄►►◄',
         callInTime: 'Three seconds',
         uses: 'Unlimited',
         cooldownTime: '180 seconds',
       },
       {
         name: 'Shield Generator Relay',
-        code: '▼▲◄►◄▼',
+        code: '▼▼◄►◄►',
         callInTime: 'Immediate',
         uses: 'Unlimited',
         cooldownTime: '90 seconds',
@@ -268,7 +268,7 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: 'Grenade Launcher',
-        code: '▼◄▼▲◄▼▼',
+        code: '▼◄▲◄▼▼',
         callInTime: 'Three seconds',
         uses: 'Unlimited',
         cooldownTime: '480 seconds',
@@ -289,28 +289,28 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: '“Guard Dog” Rover',
-        code: '▼◄▼▲◄▼▼',
+        code: '▼▲◄▲►►',
         callInTime: 'Five seconds',
         uses: 'Unlimited',
         cooldownTime: '480 seconds',
       },
       {
         name: 'Ballistic Shield Backpack',
-        code: '▼◄▲▲►',
+        code: '▼◄▼▼▲◄',
         callInTime: 'Five seconds',
         uses: 'Unlimited',
         cooldownTime: '300 seconds',
       },
       {
         name: 'Arc Thrower',
-        code: '▼►▲◄▼',
+        code: '▼►▼▲◄◄',
         callInTime: 'Three seconds',
         uses: 'Unlimited',
         cooldownTime: '480 seconds',
       },
       {
         name: 'Shield Generator Pack',
-        code: '▼▲◄▼►►',
+        code: '▼▲◄►◄►',
         callInTime: 'Five seconds',
         uses: 'Unlimited',
         cooldownTime: '480 seconds',
@@ -322,14 +322,14 @@ const STRATAGEMS: StratagemSection[] = [
     entries: [
       {
         name: 'Machine Gun Sentry',
-        code: '▼▲►▼►▼▲',
+        code: '▼▲►►▲',
         callInTime: 'Three seconds',
         uses: 'Unlimited',
         cooldownTime: '180 seconds',
       },
       {
         name: 'Gatling Sentry',
-        code: '▼▲►◄▼',
+        code: '▼▲►◄',
         callInTime: 'Three seconds',
         uses: 'Unlimited',
         cooldownTime: '180 seconds',
@@ -364,7 +364,7 @@ const STRATAGEMS: StratagemSection[] = [
       },
       {
         name: 'EMS Mortar Sentry',
-        code: '▼▼▲▲◄',
+        code: '▼▲►▼►',
         callInTime: 'Three seconds',
         uses: 'Unlimited',
         cooldownTime: '180 seconds',
@@ -374,22 +374,13 @@ const STRATAGEMS: StratagemSection[] = [
   {
     title: 'Mission Stratagems',
     entries: [
-      {
-        name: 'SOS Beacon',
-        code: '▲▼►▲',
-      },
-      {
-        name: 'Super Earth Flag',
-        code: '▼▲▼▲',
-      },
-      {
-        name: 'Upload Data',
-        code: '◄►▲▲▲',
-      },
-      {
-        name: 'Hellbomb',
-        code: '▼▲◄▼▲►▼▲',
-      },
+      { name: 'SOS Beacon', code: '▲▼►▲' },
+      { name: 'Reinforce', code: '▲▼►◄▲' },
+      { name: 'Upload Data', code: '◄►▲▲▲' },
+      { name: 'Hellbomb', code: '▼▲◄▼▲►▼▲' },
+      { name: 'Resupply', code: '▼▼▲►' },
+      { name: 'SEAF Artillery', code: '▼▲▲◄' },
+      { name: 'Global Illumination Flare', code: '►►◄◄' },
     ],
   },
 ]
